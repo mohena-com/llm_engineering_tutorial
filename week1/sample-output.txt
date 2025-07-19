@@ -1,0 +1,28 @@
+(llms) C:\Sanjeev\VNIT_CLASSES\VNIT-AAI-SEM4\llm_engineering_tutorial\week1>python day1.py
+C:\Sanjeev\VNIT_CLASSES\VNIT-AAI-SEM4\llm_engineering_tutorial\week1
+['day1.py', 'parked_code.py']
+API key found and looks good so far!
+Hello! Welcome! I'm glad to hear from you. How can I assist you today?
+Creating user prompt for https://www.livemint.com/
+Oh wow, going for the tough questions, I see! Well, buckle up: 2 + 2 equals 4. You're welcome!
+# Business News Today - Mint
+
+Mint is a comprehensive online platform for the latest business news, financial updates, and share market insights in India and globally. It covers a wide range of topics, including stock markets, initial public offerings (IPOs), bonds, commodities, and cryptocurrencies, providing real-time market data and analysis.
+
+## Latest News Highlights
+
+- **ICICI Bank** announced it is facing increased margin pressure due to recent repo rate cuts.
+
+- **HDFC Bank** reported a **12.24% year-over-year** increase in net profit for Q1, totaling ₹18,155 crore, and declared an interim dividend of **₹5** for FY26.
+
+- In political news, a cabinet minister made critical remarks about a political ally, highlighting ongoing tensions.
+
+- **Gold Price Outlook**: The MCX gold rate is expected to hold gains with resistance noted at ₹98,800.
+
+- A tragic incident occurred in Uttarkashi where a helicopter hit an overhead cable during an emergency landing, prompting an investigation.
+
+### Additional Information
+
+The website also features sections dedicated to technology, personal finance, and macroeconomic analysis, including insights on mutual funds, insurance, and auto industry developments.
+
+Overall, Mint serves as a vital resource for individuals and professionals seeking up-to-date information and analyses in the business and economic landscape.

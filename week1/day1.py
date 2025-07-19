@@ -46,7 +46,8 @@ headers = {
 class Website:
 
     def __init__(self, url):
-        
+        self.model="gpt-4o-mini"
+        #self.model="gpt-3.5-turbo"
         self.url = url
         response = requests.get(url, headers=headers)
         soup = BeautifulSoup(response.content, 'html.parser')
@@ -62,9 +63,22 @@ class Website:
         Respond in markdown."
 
         self.user_prompt = self.user_prompt_for()
+        self.messages = [{"role": "system", "content": "You are a snarky assistant"},{"role": "user", "content": "What is 2 + 2?"}]
+
+        # To give you a preview -- calling OpenAI with system and user messages:
+        self.response = openai.chat.completions.create(
+            model=self.model,
+            messages=self.messages
+        )
+        print(self.response.choices[0].message.content)
+
+    def messages_for(self):
+        return [
+            {"role": "system", "content": self.system_prompt},
+            {"role": "user", "content": self.user_prompt}
+        ]
 
     # A function that writes a User Prompt that asks for summaries of websites:
-
     def user_prompt_for(self):
         website = self.url
         print(f"Creating user prompt for {website}")
@@ -74,13 +88,25 @@ class Website:
         If it includes news or announcements, then summarize these too.\n\n"
         user_prompt += self.text
         return user_prompt
+    
+    def summarize(self):        
+        response = openai.chat.completions.create(
+            model = self.model,             
+            messages = self.messages_for()
+        )
+        return response.choices[0].message.content
+
+    def display_summary(self):
+        summary = self.summarize()        
+        return  Markdown(summary)
+        
+        
+    
 
 # Let's try one out. Change the website and add print statements to follow along.
 
-ed = Website("https://edwarddonner.com")
-print(ed.title)
-print(ed.text)
-print(ed.user_prompt)
-print(ed.system_prompt)
+# ed = Website("https://edwarddonner.com")
+ed = Website("https://www.livemint.com/") 
 
- 
+md_obj = ed.display_summary()
+print(md_obj.data)  # This prints the markdown string inside the Markdown object
