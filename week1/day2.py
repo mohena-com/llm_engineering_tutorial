@@ -30,12 +30,12 @@ payload = {
 # !ollama pull llama3.2
 
 response = requests.post(OLLAMA_API, json=payload, headers=HEADERS)
-print(f"{MODEL} -> {response.json()['message']['content']}")
+print(f"0. {MODEL} -> {response.json()['message']['content']}")
 
 import ollama
 
 response = ollama.chat(model=MODEL, messages=messages)
-print(f"{MODEL} -> {response['message']['content']}")
+print(f"1. {MODEL} -> {response['message']['content']}")
 
 # There's actually an alternative approach that some people might prefer
 # You can use the OpenAI client python library to call Ollama:
@@ -58,4 +58,4 @@ response = ollama_via_openai.chat.completions.create(
     messages=[{"role": "user", "content": "Please give definitions of some core concepts behind LLMs: a neural network, attention and the transformer"}]
 )
 
-print(f"{MODEL} -> {response.choices[0].message.content}")
+print(f"2. {MODEL} -> {response.choices[0].message.content}")
